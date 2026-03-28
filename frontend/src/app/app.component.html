@@ -1,0 +1,15 @@
+<div class="container">
+  <h1>Seguimiento de Guías</h1>
+
+  <app-tracking-form (consult)="consultarGuia($event)"></app-tracking-form>
+
+  <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+
+  <app-tracking-timeline
+    *ngIf="trackingData"
+    [guia]="trackingData.guia"
+    [estadoActual]="trackingData.estadoActual"
+    [bodegaActual]="trackingData.bodegaActual"
+    [historial]="trackingData.historial">
+  </app-tracking-timeline>
+</div>
